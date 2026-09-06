@@ -1,5 +1,6 @@
 /* =========================================
    DARKX.NET CYBERSECURITY PORTFOLIO
+   RESPONSIVE VERSION
    ========================================= */
 
 * {
@@ -17,9 +18,11 @@ body {
     background: #02060b;
     color: #ffffff;
     overflow-x: hidden;
-    background-image: url(image.jpg.jpeg);
+    background-image: url("image.jpg.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* =========================================
@@ -35,7 +38,6 @@ body {
     --text: #ffffff;
     --muted: #9caec0;
 }
-
 
 /* =========================================
    BACKGROUND
@@ -88,7 +90,6 @@ body::before {
     pointer-events: none;
     z-index: -1;
 }
-
 
 /* =========================================
    NAVBAR
@@ -208,7 +209,6 @@ nav a.active::after {
     cursor: pointer;
 }
 
-
 /* =========================================
    HERO
    ========================================= */
@@ -218,24 +218,23 @@ nav a.active::after {
 
     min-height: 100vh;
 
-    padding: 130px 4% 50px;
+    width: 100%;
+
+    padding: 130px 4% 60px;
 
     display: grid;
 
     grid-template-columns:
-        minmax(400px, 1.1fr)
-        minmax(350px, 0.9fr)
-        minmax(260px, 0.5fr);
+        minmax(0, 1.1fr)
+        minmax(0, 0.9fr)
+        minmax(230px, 0.5fr);
 
     align-items: center;
 
-    gap: 20px;
+    gap: 30px;
 
     overflow: hidden;
 }
-
-
-/* Cyber glow */
 
 .hero::before {
     content: "";
@@ -256,7 +255,6 @@ nav a.active::after {
     pointer-events: none;
 }
 
-
 /* =========================================
    TERMINAL
    ========================================= */
@@ -273,12 +271,13 @@ nav a.active::after {
     line-height: 1.6;
 
     opacity: 0.85;
+
+    overflow-wrap: anywhere;
 }
 
 .terminal p {
     margin: 0;
 }
-
 
 /* =========================================
    HERO TEXT
@@ -295,7 +294,7 @@ nav a.active::after {
 }
 
 .hero h1 {
-    font-size: clamp(55px, 6vw, 105px);
+    font-size: clamp(48px, 6vw, 105px);
 
     line-height: 0.95;
 
@@ -304,6 +303,8 @@ nav a.active::after {
     margin-bottom: 25px;
 
     color: white;
+
+    overflow-wrap: break-word;
 }
 
 .hero h1 span {
@@ -314,7 +315,7 @@ nav a.active::after {
 }
 
 .hero h2 {
-    font-size: clamp(24px, 2.5vw, 38px);
+    font-size: clamp(23px, 2.5vw, 38px);
 
     margin-bottom: 25px;
 
@@ -341,7 +342,6 @@ nav a.active::after {
     color: var(--cyan);
 }
 
-
 /* =========================================
    BUTTONS
    ========================================= */
@@ -349,7 +349,7 @@ nav a.active::after {
 .buttons {
     display: flex;
 
-    gap: 25px;
+    gap: 20px;
 
     flex-wrap: wrap;
 }
@@ -358,8 +358,9 @@ nav a.active::after {
     display: inline-flex;
 
     align-items: center;
+    justify-content: center;
 
-    gap: 20px;
+    gap: 15px;
 
     padding: 16px 30px;
 
@@ -372,6 +373,8 @@ nav a.active::after {
     transition: 0.3s;
 
     border-radius: 5px;
+
+    min-height: 52px;
 }
 
 .primary {
@@ -407,7 +410,6 @@ nav a.active::after {
         0 0 25px rgba(0, 217, 255, 0.5);
 }
 
-
 /* =========================================
    PORTRAIT
    ========================================= */
@@ -415,7 +417,11 @@ nav a.active::after {
 .portrait-container {
     position: relative;
 
-    height: 720px;
+    width: 100%;
+
+    height: min(720px, 75vh);
+
+    min-height: 450px;
 
     display: flex;
 
@@ -427,8 +433,8 @@ nav a.active::after {
 .portrait-glow {
     position: absolute;
 
-    width: 450px;
-    height: 600px;
+    width: 80%;
+    height: 80%;
 
     background: rgba(0, 170, 255, 0.22);
 
@@ -466,7 +472,6 @@ nav a.active::after {
     );
 }
 
-
 /* =========================================
    SIDE PANELS
    ========================================= */
@@ -477,6 +482,8 @@ nav a.active::after {
     flex-direction: column;
 
     gap: 20px;
+
+    min-width: 0;
 }
 
 .panel {
@@ -506,6 +513,8 @@ nav a.active::after {
 
     box-shadow:
         inset 0 0 30px rgba(0, 217, 255, 0.03);
+
+    min-width: 0;
 }
 
 .panel-title {
@@ -524,6 +533,8 @@ nav a.active::after {
     align-items: center;
 
     justify-content: space-between;
+
+    gap: 15px;
 }
 
 .status-panel small {
@@ -565,7 +576,6 @@ nav a.active::after {
         );
 }
 
-
 /* =========================================
    SKILLS
    ========================================= */
@@ -578,6 +588,8 @@ nav a.active::after {
     display: flex;
 
     justify-content: space-between;
+
+    gap: 10px;
 
     margin-bottom: 8px;
 
@@ -611,7 +623,6 @@ nav a.active::after {
         width 1.5s ease;
 }
 
-
 /* =========================================
    MISSION
    ========================================= */
@@ -638,7 +649,6 @@ nav a.active::after {
     line-height: 1.7;
 }
 
-
 /* =========================================
    SECURITY ICONS
    ========================================= */
@@ -649,6 +659,8 @@ nav a.active::after {
     gap: 25px;
 
     margin-top: 45px;
+
+    flex-wrap: wrap;
 }
 
 .security-item {
@@ -684,7 +696,6 @@ nav a.active::after {
     color: white;
 }
 
-
 /* =========================================
    OTHER SECTIONS
    ========================================= */
@@ -710,7 +721,7 @@ nav a.active::after {
 }
 
 .section-heading h2 {
-    font-size: 50px;
+    font-size: clamp(35px, 5vw, 50px);
 }
 
 .section-heading span {
@@ -721,7 +732,7 @@ nav a.active::after {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3, minmax(0, 1fr));
 
     gap: 25px;
 }
@@ -735,6 +746,8 @@ nav a.active::after {
     border: 1px solid var(--border);
 
     transition: 0.3s;
+
+    min-width: 0;
 }
 
 .content-card:hover {
@@ -770,7 +783,6 @@ nav a.active::after {
     margin-top: 25px;
 }
 
-
 /* =========================================
    FOOTER
    ========================================= */
@@ -784,6 +796,8 @@ footer {
 
     align-items: center;
 
+    gap: 20px;
+
     border-top: 1px solid rgba(0, 217, 255, 0.15);
 
     color: var(--muted);
@@ -793,16 +807,16 @@ footer .logo {
     font-size: 22px;
 }
 
-
 /* =========================================
-   MOBILE
+   TABLET / SMALL LAPTOP
    ========================================= */
 
 @media (max-width: 1100px) {
 
     .hero {
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 30px;
     }
 
     .portrait-container {
@@ -815,19 +829,24 @@ footer .logo {
         display: grid;
 
         grid-template-columns:
-            repeat(3, 1fr);
+            repeat(3, minmax(0, 1fr));
     }
 
     .cards {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
+/* =========================================
+   TABLET
+   ========================================= */
 
 @media (max-width: 800px) {
 
     .navbar {
         height: 70px;
+
+        padding: 0 5%;
     }
 
     nav {
@@ -855,6 +874,10 @@ footer .logo {
         display: flex;
     }
 
+    nav a.active::after {
+        display: none;
+    }
+
     .socials {
         display: none;
     }
@@ -868,7 +891,12 @@ footer .logo {
 
         flex-direction: column;
 
-        padding-top: 110px;
+        width: 100%;
+
+        padding:
+            100px 6% 60px;
+
+        gap: 40px;
     }
 
     .hero-content {
@@ -881,16 +909,30 @@ footer .logo {
         width: 100%;
 
         height: 500px;
+
+        min-height: 400px;
+    }
+
+    .portrait {
+        max-width: 500px;
     }
 
     .side-panels {
         width: 100%;
 
         display: flex;
+
+        flex-direction: column;
     }
 
     .hero h1 {
-        font-size: 60px;
+        font-size: clamp(48px, 10vw, 70px);
+
+        letter-spacing: -3px;
+    }
+
+    .description {
+        max-width: 100%;
     }
 
     .security-icons {
@@ -901,67 +943,168 @@ footer .logo {
         grid-template-columns: 1fr;
     }
 
+    .content-section {
+        padding: 90px 6%;
+    }
+
     footer {
         flex-direction: column;
-
-        gap: 15px;
 
         text-align: center;
     }
 }
 
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 500px) {
+
+    body {
+        background-attachment: scroll;
+    }
 
     .navbar {
         padding: 0 5%;
     }
 
     .logo {
-        font-size: 24px;
+        font-size: 23px;
     }
 
     .hero {
         padding-left: 5%;
         padding-right: 5%;
+
+        gap: 30px;
+    }
+
+    .portrait-container {
+        height: 400px;
+
+        min-height: 350px;
+    }
+
+    .portrait-glow {
+        width: 90%;
+        height: 75%;
     }
 
     .hero h1 {
-        font-size: 48px;
+        font-size: clamp(40px, 13vw, 55px);
 
         letter-spacing: -2px;
+
+        word-break: break-word;
     }
 
     .hero h2 {
-        font-size: 23px;
+        font-size: 22px;
+    }
+
+    .welcome {
+        font-size: 14px;
+
+        letter-spacing: 1px;
     }
 
     .description {
         font-size: 16px;
+
+        line-height: 1.7;
     }
 
     .buttons {
         flex-direction: column;
+
+        width: 100%;
     }
 
     .btn {
-        justify-content: center;
+        width: 100%;
+
+        padding: 15px 20px;
     }
 
     .security-icons {
-        gap: 10px;
+        gap: 15px;
+
+        justify-content: space-around;
     }
 
     .security-icon {
-        width: 60px;
-        height: 60px;
+        width: 58px;
+        height: 58px;
+
+        font-size: 23px;
+    }
+
+    .panel {
+        padding: 20px;
+    }
+
+    .status-panel h3 {
+        font-size: 23px;
+    }
+
+    .shield {
+        font-size: 45px;
     }
 
     .content-section {
-        padding: 90px 5%;
+        padding: 75px 5%;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
     }
 
     .section-heading h2 {
+        font-size: 35px;
+    }
+
+    .content-card,
+    .contact-card {
+        padding: 25px;
+    }
+
+    footer {
+        padding: 30px 5%;
+    }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero h1 {
         font-size: 38px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .portrait-container {
+        height: 340px;
+    }
+
+    .security-icons {
+        gap: 8px;
+    }
+
+    .security-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .panel {
+        padding: 17px;
     }
 }
